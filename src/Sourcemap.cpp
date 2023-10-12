@@ -15,7 +15,7 @@ std::optional<std::filesystem::path> SourceNode::getScriptFilePath()
 {
     for (const auto& path : filePaths)
     {
-        if (path.extension() == ".lua" || path.extension() == ".luau")
+        if (path.extension() == ".luau")
         {
             return path;
         }
@@ -70,11 +70,11 @@ std::optional<SourceNodePtr> SourceNode::findAncestor(const std::string& ancesto
 Luau::SourceCode::Type sourceCodeTypeFromPath(const std::filesystem::path& requirePath)
 {
     auto filename = requirePath.filename().generic_string();
-    if (endsWith(filename, ".server.lua") || endsWith(filename, ".server.luau"))
+    if (endsWith(filename, ".server.luau"))
     {
         return Luau::SourceCode::Type::Script;
     }
-    else if (endsWith(filename, ".client.lua") || endsWith(filename, ".client.luau"))
+    else if (endsWith(filename, ".client.luau"))
     {
         return Luau::SourceCode::Type::Local;
     }

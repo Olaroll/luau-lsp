@@ -292,7 +292,7 @@ std::optional<Luau::ModuleInfo> WorkspaceFileResolver::resolveStringRequire(cons
     }
 
     // Add file endings
-    if (filePath.extension() != ".luau" && filePath.extension() != ".lua")
+    if (filePath.extension() != ".luau")
     {
         auto fullFilePath = std::filesystem::weakly_canonical(filePath.string() + ".luau", ec);
         if (ec.value() != 0 || !std::filesystem::exists(fullFilePath))

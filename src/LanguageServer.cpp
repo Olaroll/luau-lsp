@@ -720,7 +720,7 @@ void LanguageServer::onDidChangeWatchedFiles(const lsp::DidChangeWatchedFilesPar
             // Recompute diagnostics
             this->recomputeDiagnostics(workspace, config);
         }
-        else if (filePath.extension() == ".lua" || filePath.extension() == ".luau")
+        else if (filePath.extension() == ".luau")
         {
             // Notify if it was a definitions file
             if (workspace->isDefinitionFile(filePath, config))

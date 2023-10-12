@@ -165,7 +165,7 @@ void WorkspaceFolder::indexFiles(const ClientConfiguration& config)
             !isIgnoredFile(next->path(), config))
         {
             auto ext = next->path().extension();
-            if (ext == ".lua" || ext == ".luau")
+            if (ext == ".luau")
             {
                 auto moduleName = fileResolver.getModuleName(Uri::file(next->path()));
 

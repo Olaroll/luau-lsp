@@ -202,7 +202,7 @@ int startAnalyze(int argc, char** argv)
                     if (next->is_regular_file() && next->path().has_extension())
                     {
                         auto ext = next->path().extension();
-                        if (ext == ".lua" || ext == ".luau")
+                        if (ext == ".luau")
                         {
                             files.push_back(next->path());
                         }

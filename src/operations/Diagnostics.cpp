@@ -102,7 +102,7 @@ lsp::WorkspaceDiagnosticReport WorkspaceFolder::workspaceDiagnostics(const lsp::
         if (next->is_regular_file() && next->path().has_extension() && !isDefinitionFile(next->path(), config))
         {
             auto ext = next->path().extension();
-            if (ext == ".lua" || ext == ".luau")
+            if (ext == ".luau")
                 files.push_back(Uri::file(next->path()));
         }
     }
